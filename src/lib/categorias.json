@@ -1,0 +1,22 @@
+[
+  {
+    "title": "JavaScript",
+    "image": "/images/logo-javascript.png"
+  },
+  {
+    "title": "CSS",
+    "image": "/images/logo-css.png"
+  },
+  {
+    "title": "MongoDB",
+    "image": "/images/logo-mongodb.png"
+  },
+  {
+    "title": "NodeJS",
+    "image": "/images/logo-nodejs.webp"
+  },
+  {
+    "title": "Astro",
+    "image": "/images/logo-astro.png"
+  }
+]

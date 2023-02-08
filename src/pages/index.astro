@@ -1,15 +1,31 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import categorias from "../lib/categorias.json";
+import { getFormatString } from "../lib/Utils";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Inicio">
+  <div class="grid grid-cols-[auto_300px]">
+    <div>
+      <h2 class="font-bold text-2xl">Últimos artículos</h2>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-2xl">Categorías</h3>
+
+      <div class="flex flex-wrap gap-2 mt-5">
+        {
+          categorias.map(({ title, image }) => (
+            <a
+              href={`/tags/${getFormatString(title)}`}
+              class="text-mayus !rounded-3xl flex items-center bg-blue-200 text-blue-800 hover:bg-blue-800 hover:text-blue-200"
+            >
+              <img src={image} alt={title} class="w-6 mr-3" />
+              <span>{title}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

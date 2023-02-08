@@ -1,0 +1,30 @@
+---
+const items = [
+  {
+    title: "Home",
+    path: "/",
+  },
+];
+---
+
+<header class="bg-zinc-900 text-white">
+  <div class="mx-auto container flex items-center h-[70px]">
+    <div>
+      <a href="/" class="font-bold text-3xl">ItsLuffyDev Blog</a>
+    </div>
+
+    <div class="ml-auto">
+      <ul class="flex">
+        {
+          items.map(({ title, path }) => (
+            <li>
+              <a href={path} class="p-4">
+                {title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</header>
